@@ -1,0 +1,31 @@
+import java.util.*;
+
+public class Main
+{
+    // revrse the array 
+    public static void reverse(int[] array){
+        int start = array.length-1, end = 0, temp;
+        while(start > end){
+            // Swap the initial and the final values
+            temp = array[start];
+            array[start] = array[end];
+            array[end] = temp;
+            start--;  // decremant the last index
+            end++;    // increamnet the index
+        }
+        System.out.println(Arrays.toString(array));
+    }
+    
+	public static void main(String[] args) {
+	    Scanner scanner = new Scanner(System.in);
+		System.out.println("Tell me the size of array: ");
+		int sizeOfArr = scanner.nextInt();
+		System.out.println("Now tell me the numbers of the array and I will back you the revese");
+		int[] array = new int[sizeOfArr];
+		for(int i = 0; i < sizeOfArr; i++){ // take the values from the user and put it on the array 
+		    array[i] = scanner.nextInt();
+		}
+		System.out.println("So the reverse of the array is:");
+		reverse(array);
+	}
+}
